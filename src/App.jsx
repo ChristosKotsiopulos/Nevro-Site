@@ -192,50 +192,50 @@ function FloatingPanel() {
       <div className="absolute -inset-6 rounded-[2rem] bg-gradient-to-r from-orange-500/20 via-orange-300/10 to-transparent blur-3xl" />
       <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-zinc-950 shadow-2xl shadow-orange-500/10">
         <div className="grid lg:grid-cols-[1.15fr_0.85fr]">
-          <div className="relative min-h-[430px] border-b border-white/10 p-6 sm:p-8 lg:border-b-0 lg:border-r">
+          <div className="relative min-h-[300px] sm:min-h-[430px] border-b border-white/10 p-4 sm:p-6 lg:border-b-0 lg:border-r lg:p-8">
             <DotGrid />
 
-            <div className="relative z-10 mb-6 flex items-center justify-between">
+            <div className="relative z-10 mb-4 sm:mb-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
               <div>
                 <div className="text-xs uppercase tracking-[0.25em] text-orange-300">Nevro Command</div>
-                <div className="mt-2 text-2xl font-semibold text-white">Infrastructure nerve map</div>
+                <div className="mt-2 text-lg sm:text-2xl font-semibold text-white">Infrastructure nerve map</div>
               </div>
-              <div className="rounded-full border border-orange-400/30 bg-orange-500/10 px-3 py-1 text-xs text-orange-200">
+              <div className="rounded-full border border-orange-400/30 bg-orange-500/10 px-3 py-1 text-xs text-orange-200 whitespace-nowrap">
                 Live edge telemetry
               </div>
             </div>
 
-            <div className="relative z-10 grid h-[300px] grid-cols-3 gap-4">
-              <Card className="col-span-2 border-white/10 bg-white/5 backdrop-blur-xl">
-                <CardContent className="p-5">
-                  <div className="mb-4 flex items-center justify-between">
+            <div className="relative z-10 grid auto-rows-max lg:h-[300px] grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+              <Card className="col-span-1 sm:col-span-2 border-white/10 bg-white/5 backdrop-blur-xl">
+                <CardContent className="p-3 sm:p-5">
+                  <div className="mb-3 sm:mb-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
                     <div>
-                      <div className="text-sm text-zinc-400">Regional network health</div>
-                      <div className="text-lg font-medium text-white">47 active infrastructure nodes</div>
+                      <div className="text-xs sm:text-sm text-zinc-400">Regional network health</div>
+                      <div className="text-base sm:text-lg font-medium text-white">47 active infrastructure nodes</div>
                     </div>
-                    <Activity className="h-5 w-5 text-orange-300" />
+                    <Activity className="h-4 sm:h-5 w-4 sm:w-5 text-orange-300 shrink-0" />
                   </div>
-                  <div className="grid grid-cols-8 items-end gap-2 pt-8">
+                  <div className="grid grid-cols-8 items-end gap-1 sm:gap-2 pt-4 sm:pt-8">
                     {bars.map((bar, idx) => (
                       <motion.div
                         key={idx}
                         initial={{ height: 20 }}
                         animate={{ height: `${bar}%` }}
                         transition={{ duration: 1.2, delay: idx * 0.08 }}
-                        className="rounded-t-xl bg-gradient-to-t from-orange-600 to-orange-300"
+                        className="rounded-t-lg sm:rounded-t-xl bg-gradient-to-t from-orange-600 to-orange-300"
                       />
                     ))}
                   </div>
                 </CardContent>
               </Card>
 
-              <Card className="border-white/10 bg-white/5 backdrop-blur-xl">
-                <CardContent className="flex h-full flex-col justify-between p-5">
+              <Card className="col-span-1 border-white/10 bg-white/5 backdrop-blur-xl">
+                <CardContent className="flex h-full flex-col justify-between p-3 sm:p-5">
                   <div>
-                    <div className="text-sm text-zinc-400">Alert status</div>
-                    <div className="mt-2 text-3xl font-semibold text-white">Nominal</div>
+                    <div className="text-xs sm:text-sm text-zinc-400">Alert status</div>
+                    <div className="mt-2 text-2xl sm:text-3xl font-semibold text-white">Nominal</div>
                   </div>
-                  <div className="space-y-2 text-sm text-zinc-300">
+                  <div className="space-y-1 sm:space-y-2 text-xs sm:text-sm text-zinc-300">
                     <div className="flex items-center justify-between"><span>Core links</span><span>Stable</span></div>
                     <div className="flex items-center justify-between"><span>Field devices</span><span>Healthy</span></div>
                     <div className="flex items-center justify-between"><span>Latency band</span><span>9ms</span></div>
@@ -243,13 +243,13 @@ function FloatingPanel() {
                 </CardContent>
               </Card>
 
-              <Card className="border-white/10 bg-white/5 backdrop-blur-xl">
-                <CardContent className="p-5">
-                  <div className="mb-6 text-sm text-zinc-400">Node groups</div>
-                  <div className="space-y-3">
+              <Card className="col-span-1 border-white/10 bg-white/5 backdrop-blur-xl">
+                <CardContent className="p-3 sm:p-5">
+                  <div className="mb-4 sm:mb-6 text-xs sm:text-sm text-zinc-400">Node groups</div>
+                  <div className="space-y-2 sm:space-y-3">
                     {["Transit", "Energy", "Facilities"].map((item, idx) => (
                       <div key={item} className="space-y-1">
-                        <div className="flex items-center justify-between text-sm text-white">
+                        <div className="flex items-center justify-between text-xs sm:text-sm text-white">
                           <span>{item}</span>
                           <span>{[94, 98, 91][idx]}%</span>
                         </div>
@@ -267,20 +267,20 @@ function FloatingPanel() {
                 </CardContent>
               </Card>
 
-              <Card className="col-span-2 border-white/10 bg-gradient-to-br from-white/8 to-white/5 backdrop-blur-xl">
-                <CardContent className="p-5">
-                  <div className="mb-5 flex items-center justify-between">
+              <Card className="col-span-1 sm:col-span-2 border-white/10 bg-gradient-to-br from-white/8 to-white/5 backdrop-blur-xl">
+                <CardContent className="p-3 sm:p-5">
+                  <div className="mb-4 sm:mb-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
                     <div>
-                      <div className="text-sm text-zinc-400">Deployment activity</div>
-                      <div className="text-lg font-medium text-white">Edge devices synchronized across 12 districts</div>
+                      <div className="text-xs sm:text-sm text-zinc-400">Deployment activity</div>
+                      <div className="text-sm sm:text-lg font-medium text-white">Edge devices synchronized across 12 districts</div>
                     </div>
-                    <Orbit className="h-5 w-5 text-orange-300" />
+                    <Orbit className="h-4 sm:h-5 w-4 sm:w-5 text-orange-300 shrink-0" />
                   </div>
-                  <div className="grid grid-cols-4 gap-3 text-sm text-zinc-300">
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 text-xs sm:text-sm text-zinc-300">
                     {["Gateways provisioned", "Firmware validated", "Links encrypted", "Policies applied"].map((item, idx) => (
-                      <div key={item} className="rounded-2xl border border-white/10 bg-black/20 p-4">
-                        <div className="mb-2 text-zinc-500">0{idx + 1}</div>
-                        <div className="font-medium text-white">{item}</div>
+                      <div key={item} className="rounded-lg sm:rounded-2xl border border-white/10 bg-black/20 p-2 sm:p-4">
+                        <div className="mb-1 sm:mb-2 text-zinc-500 text-xs">0{idx + 1}</div>
+                        <div className="font-medium text-white text-xs sm:text-sm">{item}</div>
                       </div>
                     ))}
                   </div>
@@ -684,33 +684,33 @@ export default function NevroLandingPage() {
 
       <section id="contact" className="px-6 pb-24 pt-10 lg:px-10">
         <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-[0.9fr_1.1fr]">
-          <div className="rounded-[2rem] border border-white/10 bg-zinc-950 p-8 sm:p-10">
+          <div className="rounded-[2rem] border border-white/10 bg-zinc-950 p-6 sm:p-8 lg:p-10">
             <div className="text-xs uppercase tracking-[0.25em] text-orange-400">Contact</div>
-            <h2 className="mt-4 text-3xl font-semibold text-white sm:text-5xl">See how Nevro can modernize your infrastructure stack</h2>
-            <p className="mt-5 max-w-lg text-base leading-8 text-zinc-400">
+            <h2 className="mt-4 text-2xl sm:text-3xl lg:text-5xl font-semibold text-white">See how Nevro can modernize your infrastructure stack</h2>
+            <p className="mt-5 max-w-lg text-sm sm:text-base leading-7 sm:leading-8 text-zinc-400">
               Talk with our team about edge systems, network modernization, telemetry, and secure infrastructure integration.
             </p>
 
-            <div className="mt-8 space-y-4 text-sm text-zinc-300">
-              <div className="flex items-center gap-3"><Mail className="h-4 w-4 text-orange-300" /> hello@nevro.tech</div>
-              <div className="flex items-center gap-3"><Phone className="h-4 w-4 text-orange-300" /> +1 (555) 240-0186</div>
-              <div className="flex items-center gap-3"><MapPin className="h-4 w-4 text-orange-300" /> Austin, Texas</div>
+            <div className="mt-6 sm:mt-8 space-y-3 sm:space-y-4 text-xs sm:text-sm text-zinc-300">
+              <div className="flex items-center gap-3"><Mail className="h-4 w-4 text-orange-300 shrink-0" /> hello@nevro.tech</div>
+              <div className="flex items-center gap-3"><Phone className="h-4 w-4 text-orange-300 shrink-0" /> +1 (555) 240-0186</div>
+              <div className="flex items-center gap-3"><MapPin className="h-4 w-4 text-orange-300 shrink-0" /> Austin, Texas</div>
             </div>
           </div>
 
-          <div className="rounded-[2rem] border border-white/10 bg-white/[0.03] p-8 sm:p-10">
-            <div className="grid gap-4 sm:grid-cols-2">
-              <Input className="h-12 rounded-2xl border-white/10 bg-black/20 text-white placeholder:text-zinc-500" placeholder="First name" />
-              <Input className="h-12 rounded-2xl border-white/10 bg-black/20 text-white placeholder:text-zinc-500" placeholder="Last name" />
+          <div className="rounded-[2rem] border border-white/10 bg-white/[0.03] p-6 sm:p-8 lg:p-10">
+            <div className="grid gap-3 sm:gap-4 sm:grid-cols-2">
+              <Input className="h-10 sm:h-12 rounded-lg sm:rounded-2xl border-white/10 bg-black/20 text-white text-sm placeholder:text-zinc-500" placeholder="First name" />
+              <Input className="h-10 sm:h-12 rounded-lg sm:rounded-2xl border-white/10 bg-black/20 text-white text-sm placeholder:text-zinc-500" placeholder="Last name" />
             </div>
-            <div className="mt-4 grid gap-4 sm:grid-cols-2">
-              <Input className="h-12 rounded-2xl border-white/10 bg-black/20 text-white placeholder:text-zinc-500" placeholder="Work email" />
-              <Input className="h-12 rounded-2xl border-white/10 bg-black/20 text-white placeholder:text-zinc-500" placeholder="Company" />
+            <div className="mt-3 sm:mt-4 grid gap-3 sm:gap-4 sm:grid-cols-2">
+              <Input className="h-10 sm:h-12 rounded-lg sm:rounded-2xl border-white/10 bg-black/20 text-white text-sm placeholder:text-zinc-500" placeholder="Work email" />
+              <Input className="h-10 sm:h-12 rounded-lg sm:rounded-2xl border-white/10 bg-black/20 text-white text-sm placeholder:text-zinc-500" placeholder="Company" />
             </div>
-            <Textarea className="mt-4 min-h-[140px] rounded-[1.5rem] border-white/10 bg-black/20 text-white placeholder:text-zinc-500" placeholder="Tell us about your infrastructure environment and what you want to improve" />
-            <div className="mt-4 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-              <p className="text-sm leading-7 text-zinc-500">By submitting, you agree to be contacted about Nevro solutions and platform capabilities.</p>
-              <Button className="h-12 rounded-full bg-orange-500 px-6 text-white hover:bg-orange-400">
+            <Textarea className="mt-3 sm:mt-4 min-h-[120px] sm:min-h-[140px] rounded-lg sm:rounded-[1.5rem] border-white/10 bg-black/20 text-white text-sm placeholder:text-zinc-500" placeholder="Tell us about your infrastructure environment and what you want to improve" />
+            <div className="mt-4 flex flex-col gap-3 sm:gap-4 sm:items-center sm:justify-between">
+              <p className="text-xs sm:text-sm leading-6 sm:leading-7 text-zinc-500 order-2 sm:order-1">By submitting, you agree to be contacted about Nevro solutions and platform capabilities.</p>
+              <Button className="h-11 sm:h-12 rounded-full bg-orange-500 px-6 text-sm text-white hover:bg-orange-400 w-full sm:w-auto order-1 sm:order-2">
                 Request a demo <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </div>
