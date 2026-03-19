@@ -205,9 +205,9 @@ function FloatingPanel() {
               </div>
             </div>
 
-            <div className="relative z-10 grid auto-rows-max lg:h-[300px] grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
-              <Card className="col-span-1 sm:col-span-2 border-white/10 bg-white/5 backdrop-blur-xl">
-                <CardContent className="p-3 sm:p-5">
+            <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 auto-rows-max gap-3 sm:gap-4">
+              <Card className="col-span-1 sm:col-span-2 lg:col-span-2 min-h-[280px] sm:min-h-[300px] border-white/10 bg-white/5 backdrop-blur-xl">
+                <CardContent className="p-3 sm:p-5 h-full flex flex-col">
                   <div className="mb-3 sm:mb-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
                     <div>
                       <div className="text-xs sm:text-sm text-zinc-400">Regional network health</div>
@@ -215,7 +215,7 @@ function FloatingPanel() {
                     </div>
                     <Activity className="h-4 sm:h-5 w-4 sm:w-5 text-orange-300 shrink-0" />
                   </div>
-                  <div className="grid grid-cols-8 items-end gap-1 sm:gap-2 pt-4 sm:pt-8">
+                  <div className="grid grid-cols-8 items-end gap-1 sm:gap-2 pt-4 sm:pt-8 flex-grow">
                     {bars.map((bar, idx) => (
                       <motion.div
                         key={idx}
@@ -229,7 +229,7 @@ function FloatingPanel() {
                 </CardContent>
               </Card>
 
-              <Card className="col-span-1 border-white/10 bg-white/5 backdrop-blur-xl">
+              <Card className="col-span-1 min-h-[280px] sm:min-h-[300px] border-white/10 bg-white/5 backdrop-blur-xl">
                 <CardContent className="flex h-full flex-col justify-between p-3 sm:p-5">
                   <div>
                     <div className="text-xs sm:text-sm text-zinc-400">Alert status</div>
@@ -243,8 +243,8 @@ function FloatingPanel() {
                 </CardContent>
               </Card>
 
-              <Card className="col-span-1 border-white/10 bg-white/5 backdrop-blur-xl">
-                <CardContent className="p-3 sm:p-5">
+              <Card className="col-span-1 min-h-[280px] sm:min-h-[300px] border-white/10 bg-white/5 backdrop-blur-xl">
+                <CardContent className="p-3 sm:p-5 h-full flex flex-col justify-center">
                   <div className="mb-4 sm:mb-6 text-xs sm:text-sm text-zinc-400">Node groups</div>
                   <div className="space-y-2 sm:space-y-3">
                     {["Transit", "Energy", "Facilities"].map((item, idx) => (
@@ -267,7 +267,7 @@ function FloatingPanel() {
                 </CardContent>
               </Card>
 
-              <Card className="col-span-1 sm:col-span-2 border-white/10 bg-gradient-to-br from-white/8 to-white/5 backdrop-blur-xl">
+              <Card className="col-span-1 sm:col-span-2 lg:col-span-3 min-h-[280px] sm:min-h-[300px] border-white/10 bg-gradient-to-br from-white/8 to-white/5 backdrop-blur-xl">
                 <CardContent className="p-3 sm:p-5">
                   <div className="mb-4 sm:mb-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
                     <div>
