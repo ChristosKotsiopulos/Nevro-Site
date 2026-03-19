@@ -267,7 +267,7 @@ function FloatingPanel() {
                 </CardContent>
               </Card>
 
-              <Card className="col-span-1 sm:col-span-2 lg:col-span-3 min-h-[280px] sm:min-h-[300px] border-white/10 bg-gradient-to-br from-white/8 to-white/5 backdrop-blur-xl">
+              <Card className="col-span-1 sm:col-span-2 lg:col-span-2 min-h-[280px] sm:min-h-[300px] border-white/10 bg-gradient-to-br from-white/8 to-white/5 backdrop-blur-xl">
                 <CardContent className="p-3 sm:p-5">
                   <div className="mb-4 sm:mb-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
                     <div>
@@ -276,7 +276,7 @@ function FloatingPanel() {
                     </div>
                     <Orbit className="h-4 sm:h-5 w-4 sm:w-5 text-orange-300 shrink-0" />
                   </div>
-                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 text-xs sm:text-sm text-zinc-300">
+                  <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 gap-2 sm:gap-3 text-xs sm:text-sm text-zinc-300">
                     {["Gateways provisioned", "Firmware validated", "Links encrypted", "Policies applied"].map((item, idx) => (
                       <div key={item} className="rounded-lg sm:rounded-2xl border border-white/10 bg-black/20 p-2 sm:p-4">
                         <div className="mb-1 sm:mb-2 text-zinc-500 text-xs">0{idx + 1}</div>
